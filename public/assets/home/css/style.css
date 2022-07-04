@@ -306,10 +306,96 @@ input[type=number] {
     font-size: 14px;
     color: #333333;
 }
+.footer-section-1 {
+    margin-left: 101px;
+}
+.img-footer {
+    width: 198px;
+}
+.desc-footer {
+    font-weight: 400;
+    font-size: 12px;
+    color: #555555;
+    width: 371px;
+    text-align: justify;
+}
+.title-subscribe-footer {
+    font-weight: 600;
+    font-size: 14px;
+    color: #333333;
+    margin-top: 24px;
+}
+.button-subscribe-footer {
+    font-weight: 600;
+    font-size: 16px;
+    color: #0EA44D;
+    border: 1px solid;
+    border-radius: 16px;
+    width: 149px;
+    height: 40px;
+    margin-top: 8px;
+}
+.title-menu-footer {
+    font-weight: 700;
+    font-size: 16px;
+    color: #333333;
+    margin-top: 40px;
+}
+.menu-footer {
+    font-weight: 500;
+    font-size: 12px;
+    color: #555555;
+    margin-top: 24px;
+}
+.icon-footer {
+    margin-right: 15.41px;
+}
+.foot {
+    height: 47px;
+    background-color: #0EA44D;
+}
+.foot-text {
+    font-weight: 500;
+    font-size: 14px;  
+    color: white; 
+    height: 21px; 
+    margin-left: 100px;
+    margin-top: 14px;
+}
+.card-foot-icon {
+    margin-right: 54px;
+    margin-top: 10px;
+}
+.foot-icon {
+    color: white;
+    font-size: 20px;
+    margin-left: 29px;
+}
+.foot-icon:hover {
+    color: white;
+}
 @media screen and (max-width: 1320px) {
     .nav-logo {
         margin-left: 0px;
         margin-right: 0px;
+    }
+}
+@media screen and (max-width: 1140px) {
+    .footer-section-1 {
+        margin-left: 31px;
+    }
+    .foot-text {
+        margin-left: 31px;
+        margin-top: 14px;
+    }
+}
+@media screen and (max-width: 960px) {
+    .foot-text {
+        font-size: 12px;
+    }
+    .foot-icon {
+        font-size: 16px;
+        margin-left: 22px;
     }
 }
 @media screen and (max-width: 720px) {
@@ -318,6 +404,32 @@ input[type=number] {
         height: 8px;
         margin-left: 50px;
         margin-top: 5px;
+    }
+    .footer-section-1 {
+        margin-left: 0px;
+        text-align: center;
+    }
+    .desc-footer {
+        font-size: 12px;
+        text-align: center;
+        width: auto;
+    }
+    .img-footer {
+        width: 198px;
+        margin-bottom: 40px;
+    }
+    .title-menu-footer {
+        text-align: center;
+    }
+    .menu-footer {
+        text-align: center;
+    }
+    .foot-text {
+        font-size: 8px;
+    }
+    .foot-icon {
+        font-size: 12px;
+        margin-left: 16px;
     }
 }
 @media screen and (max-width: 500px) {

@@ -19,7 +19,7 @@
         </div>
     </div>
 {{-- </div> --}}
-<header>
+{{-- <header> --}}
     <nav class="navbar navbar-expand-xl sticky-top navbar-light nav-menu">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ url('/') }}">
@@ -62,4 +62,4 @@
             </div>
         </div>
     </nav>
-</header>
+{{-- </header> --}}
