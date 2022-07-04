@@ -291,13 +291,15 @@ input[type=number] {
     color: white;
     font-weight: 500;
     font-size: 16px;
-    margin-right: 8px;
+    width: 100px;
 }
 .button-masuk {
     background-color: white;
     color: #0EA44D;
     border: 1px solid;
     border-color: #0EA44D;
+    margin-right: 8px;
+    width: 102px;
 }
 .aktif {
     font-weight: 600;

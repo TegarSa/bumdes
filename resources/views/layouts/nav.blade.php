@@ -31,7 +31,7 @@
             <div class="collapse navbar-collapse nav-menu-item" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item item-nav">
-                        <a class="nav-link aktif" aria-current="page" href="{{ url('/') }}">Beranda</a>
+                        <a class="nav-link {{ Request::is('/') ? 'aktif' : '' }}" aria-current="page" href="{{ url('/') }}">Beranda</a>
                     </li>
                     <li class="nav-item item-nav">
                         <a class="nav-link" href="#">Pelatihan</a>
@@ -56,8 +56,8 @@
                     </li>
                 </ul>
                 <div class="d-flex button-nav">
-                    <a href="{{ url('daftar-1') }}"><button class="btn button-daftar">Daftar</button></a>
                     <a href="{{ url('/login') }}"><button class="btn button-masuk">Masuk</button></a>
+                    <a href="{{ url('daftar-1') }}"><button class="btn button-daftar">Daftar</button></a>
                 </div>
             </div>
         </div>
