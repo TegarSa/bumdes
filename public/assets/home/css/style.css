@@ -311,6 +311,7 @@ input[type=number] {
 }
 .img-footer {
     width: 198px;
+    margin-bottom: 16px;
 }
 .desc-footer {
     font-weight: 400;
