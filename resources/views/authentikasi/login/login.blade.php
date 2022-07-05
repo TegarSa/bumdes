@@ -63,7 +63,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="d-flex flex-column justify-content-center align-items-start">
-                    <a class="kembali-beranda" href="#">
+                    <a class="kembali-beranda" href="{{ url('/') }}">
                         <i class="fa-solid fa-arrow-left-long"></i> Kembali Ke Beranda
                     </a>
                 </div>
@@ -80,15 +80,10 @@
                                     <label class="label-form">Email*</label>
                                     <input type="email" class="form-control input-form" name="email" placeholder="Masukan email anda">
                                 </div>
-                                {{-- <div class="form-group"  style="margin-bottom: 26px;">
-                                    <label class="label-form">Password*</label>
-                                    <input type="Password" class="form-control input-form" name="password" id="password" placeholder="Masukan password anda">
-                                    <label class="desc-form">Minimal 8 karakter</label>
-                                </div> --}}
                                 <div class="form-group" style="margin-top: 16px;">
                                     <label class="label-form">Password*</label>
                                     <div class="input-group input-form">
-                                        <input type="password" class="form-control" name="password" id="pass" placeholder="Masukan password anda" aria-describedby="basic-addon1">
+                                        <input type="password" class="form-control input-form" name="password" id="pass" placeholder="Masukan password anda" aria-describedby="basic-addon1">
                                         <span id="mybutton" onclick="change()" class="input-group-text">
                                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-fill" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -111,7 +106,7 @@
                                     <div class="col-6">
                                         <div class="d-flex flex-row justify-content-end">
                                             <div class="form-group">
-                                                <label class="lupa-sandi">Lupa kata Sandi?</label>
+                                                <a href="{{ url('/lupa-password') }}"><label class="lupa-sandi">Lupa kata Sandi?</label></a>
                                             </div>
                                         </div>
                                     </div>

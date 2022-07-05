@@ -64,3 +64,7 @@ Route::get('/berhasil', function () {
 Route::get('/', function () {
     return view('homepage.index');
 });
+
+Route::get('/login-admin', function () {
+    return view('admin.login.login');
+});

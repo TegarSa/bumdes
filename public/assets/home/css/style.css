@@ -375,6 +375,17 @@ input[type=number] {
 .foot-icon:hover {
     color: white;
 }
+.logo-bumdes-login {
+    width: 360px;
+    height: 160px;
+}
+.title-login-admin {
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 @media screen and (max-width: 1320px) {
     .nav-logo {
         margin-left: 0px;

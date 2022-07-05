@@ -6,8 +6,8 @@
 <div class="row">
     <div class="col-md-12">
         <div class="d-flex flex-column justify-content-center align-items-start">
-            <a class="kembali-beranda" href="#">
-                <i class="fa-solid fa-arrow-left-long"></i> Kembali Ke Beranda
+            <a class="kembali-beranda" href="{{ url('/login') }}">
+                <i class="fa-solid fa-arrow-left-long"></i> Kembali ke halaman login
             </a>
         </div>
     </div>
