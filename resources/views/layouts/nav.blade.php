@@ -34,25 +34,19 @@
                         <a class="nav-link {{ Request::is('/') ? 'aktif' : '' }}" aria-current="page" href="{{ url('/') }}">Beranda</a>
                     </li>
                     <li class="nav-item item-nav">
-                        <a class="nav-link" href="#">Pelatihan</a>
+                        <a class="nav-link dropdown-toggle" onclick="pelatihan()" href="#">Pelatihan</a>
                     </li>
                     <li class="nav-item item-nav">
-                        <a class="nav-link" href="#">Pendampingan</a>
+                        <a class="nav-link dropdown-toggle" href="#">Pendampingan</a>
                     </li>
                     <li class="nav-item item-nav">
-                        <a class="nav-link" href="#">Layanan Digital</a>
+                        <a class="nav-link dropdown-toggle" onclick="layanan()" href="#">Layanan Digital</a>
                     </li>
                     <li class="nav-item item-nav">
-                        <a class="nav-link" href="#">Tentang Kami</a>
+                        <a class="nav-link dropdown-toggle" onclick="berita()" href="#">Berita BUM Desa</a>
                     </li>
                     <li class="nav-item item-nav">
-                        <a class="nav-link" href="#">Agenda</a>
-                    </li>
-                    <li class="nav-item item-nav">
-                        <a class="nav-link" href="#">Artikel</a>
-                    </li>
-                    <li class="nav-item item-nav">
-                        <a class="nav-link" href="#">Download</a>
+                        <a class="nav-link dropdown-toggle" onclick="profil()" href="#">Profil BUM Desa</a>
                     </li>
                 </ul>
                 <div class="d-flex button-nav">

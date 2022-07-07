@@ -21,6 +21,10 @@ Route::get('/admin', function () {
     return view('admin.dashboard.index');
 });
 
+Route::get('/akun-terdaftar', function () {
+    return view('admin.akunterdaftar.index');
+});
+
 Route::get('/daftar-1', function () {
     return view('authentikasi.register.step1');
 });

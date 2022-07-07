@@ -269,7 +269,6 @@ input[type=number] {
 }
 .nav-menu {
     background-color: white;
-    box-shadow: 0px 3px 0px lightblue;
 }
 .nav-logo {
     margin-left: 105px;
@@ -386,10 +385,63 @@ input[type=number] {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+.title-pelatihan-nav {
+    font-weight: 600;
+    font-size: 24px;
+    color: white;
+    margin-left: 100px;
+    margin-top: 32px;
+    margin-bottom: 6px;
+}
+.x-pelatihan-nav {
+    margin-top: 36px;
+    margin-right: 20px;
+}
+.card-pelatihan-nav {
+    width: 1320px;
+    margin-bottom: 40px;
+}
+.icon-pelatihan-nav {
+    width: 56px;
+    height: 56px;
+}
+.isi-pelatihan-nav {
+    font-weight: 600;
+    font-size: 16px;
+    color: white;
+    width: 195px;
+}
+.pelatihan-nav {
+    margin-top: 32px;
+}
+.menu-pelatihan {
+    text-decoration: none;
+}
+.menu-pelatihan:hover {
+    background-color: #2B73FF;
+}
+.judul-layanan-nav {
+    font-weight: 600;
+    font-size: 16px;
+    color: white;
+}
+.isi-layanan-nav {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: white;
+    margin-top: -15px;
+}
 @media screen and (max-width: 1320px) {
     .nav-logo {
         margin-left: 0px;
         margin-right: 0px;
+    }
+    .title-pelatihan-nav {
+        font-size: 24px;
+        margin-left: 0px;
+        margin-top: 32px;
+        margin-bottom: 6px;
     }
 }
 @media screen and (max-width: 1140px) {
@@ -408,6 +460,26 @@ input[type=number] {
     .foot-icon {
         font-size: 16px;
         margin-left: 22px;
+    }
+    .isi-pelatihan-nav {
+        font-weight: 600;
+        font-size: 12px;
+        color: white;
+        width: 135px;
+    }
+    .icon-pelatihan-nav {
+        width: 43px;
+        height: 43px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .isi-pelatihan-nav {
+        font-size: 16px;
+        width: 195px;
+    }
+    .icon-pelatihan-nav {
+        width: 56px;
+        height: 56px;
     }
 }
 @media screen and (max-width: 720px) {
@@ -444,6 +516,7 @@ input[type=number] {
         margin-left: 16px;
     }
 }
+
 @media screen and (max-width: 500px) {
     .card-form-register {
         height: 501.60px;

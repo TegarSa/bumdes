@@ -26,6 +26,67 @@
               x.style.display = "none";
           }
       }
+      
+    function pelatihan() {
+        var w = document.getElementById("berita");
+        var x = document.getElementById("pelatihan");
+        var y = document.getElementById("layanan");
+        var z = document.getElementById("profil");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+            y.style.display = "none";
+            z.style.display = "none";
+            w.style.display = "none";
+        } else {
+            x.style.display = "none";
+        }
+    }
+
+    function layanan() {
+        var w = document.getElementById("berita");
+        var x = document.getElementById("layanan");
+        var y = document.getElementById("pelatihan");
+        var z = document.getElementById("profil");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+            y.style.display = "none";
+            z.style.display = "none";
+            w.style.display = "none";
+        } else {
+            x.style.display = "none";
+        }
+    }
+
+    function profil() {
+        var w = document.getElementById("berita");
+        var x = document.getElementById("profil");
+        var y = document.getElementById("layanan");
+        var z = document.getElementById("pelatihan");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+            y.style.display = "none";
+            z.style.display = "none";
+            w.style.display = "none";
+        } else {
+            x.style.display = "none";
+        }
+    }
+
+    function berita() {
+        var w = document.getElementById("berita");
+        var x = document.getElementById("profil");
+        var y = document.getElementById("layanan");
+        var z = document.getElementById("pelatihan");
+        if (w.style.display === "none") {
+            w.style.display = "block";
+            x.style.display = "none";
+            y.style.display = "none";
+            z.style.display = "none";
+        } else {
+            w.style.display = "none";
+        }
+    }
+      
     </script>
     @yield('js')
 </body>
