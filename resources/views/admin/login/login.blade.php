@@ -36,6 +36,14 @@
                                 </span>
                             </div>
                         </div>
+                        <div class="form-group" style="margin-top: 16px;">
+                            <div class="d-flex flex-row justify-content-start">
+                                <div class="form-group">
+                                    <input type="checkbox" name="remember">
+                                    <label class="ingat-saya">Ingat saya</label>
+                                </div>
+                            </div>
+                        </div>
                         <div class="form-group" style="margin-top: 0px;">
                             <button type="submit" class="btn btn-lanjut">Masuk</button>
                         </div>

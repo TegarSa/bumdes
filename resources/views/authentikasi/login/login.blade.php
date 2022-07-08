@@ -107,7 +107,7 @@
                                     <div class="col-6">
                                         <div class="d-flex flex-row justify-content-start">
                                             <div class="form-group">
-                                                <input type="checkbox">
+                                                <input type="checkbox" name="remember">
                                                 <label class="ingat-saya">Ingat saya</label>
                                             </div>
                                         </div>

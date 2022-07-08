@@ -218,20 +218,20 @@ class AuthController extends Controller
         ],$messages);
 
         $kredensil = $request->only('email','password');
-
-            if (Auth::attempt($kredensil)) {
-                $user = Auth::user();
-                if ($user->hak_akses == '0') {
-                    return redirect()->intended('admin');
-                } elseif ($user->hak_akses == '1') {
-                    return redirect()->intended('pegawai_bumdes');
-                } elseif ($user->hak_akses == '2') {
-                    return redirect()->intended('pegawai_desa');
-                } elseif ($user->hak_akses == '3') {
-                    return redirect()->intended('umum');
-                }
-                return redirect()->intended('/login');
+        $ingat = $request->remember ? true : false;
+        if (Auth::attempt($kredensil, $ingat)) {
+            $user = Auth::user();
+            if ($user->hak_akses == '0') {
+                return redirect()->intended('admin');
+            } elseif ($user->hak_akses == '1') {
+                return redirect()->intended('pegawai_bumdes');
+            } elseif ($user->hak_akses == '2') {
+                return redirect()->intended('pegawai_desa');
+            } elseif ($user->hak_akses == '3') {
+                return redirect()->intended('umum');
             }
+            return redirect()->intended('/login');
+        }
         Alert::error('Gagal', 'Email dan password tidak terdaftar');
         return redirect('/login');
     }
