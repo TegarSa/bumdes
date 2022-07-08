@@ -272,3 +272,63 @@
         </div>
     </div>
 </div>
+<div class="row" id="pendampingan" style="background-color: #0EA44D; display: none;">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-6">
+                <div class="d-flex flex-row justify-content-start">
+                    <p class="title-pelatihan-nav">Pendampingan BUM Desa</p>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="d-flex flex-row justify-content-end">
+                    <a href="#" onclick="pendampingan()" class="text-white x-pelatihan-nav"><i class="fa-solid fa-xmark"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-row justify-content-center">
+            <div class="row card-pelatihan-nav">
+                <div class="col-md-3 pelatihan-nav">
+                    <div class="row">
+                        <div class="col-3">
+                            <img class="icon-pelatihan-nav" src="{{ asset('/assets/home/img/icon/home-gear.png') }}">
+                        </div>
+                        <p class="isi-pelatihan-nav">Tata Kelola Kelembagaan Bumdes</p>
+                    </div>
+                </div>
+                <div class="col-md-3 pelatihan-nav">
+                    <div class="row">
+                        <div class="col-3">
+                            <img class="icon-pelatihan-nav" src="{{ asset('/assets/home/img/icon/home-gear.png') }}">
+                        </div>
+                        <p class="isi-pelatihan-nav">Tata Kelola Manajemen Bumdes</p>
+                    </div>
+                </div>
+                <div class="col-md-3 pelatihan-nav">
+                    <div class="row">
+                        <div class="col-3">
+                            <img class="icon-pelatihan-nav" src="{{ asset('/assets/home/img/icon/internet.png') }}">
+                        </div>
+                        <p class="isi-pelatihan-nav">Digitalisasi Bumdes</p>
+                    </div>
+                </div>
+                <div class="col-md-3 pelatihan-nav">
+                    <div class="row">
+                        <div class="col-3">
+                            <img class="icon-pelatihan-nav" src="{{ asset('/assets/home/img/icon/home-check.png') }}">
+                        </div>
+                        <p class="isi-pelatihan-nav">Penyusunan Rencana Usaha Bumdes</p>
+                    </div>
+                </div>
+                <div class="col-md-3 pelatihan-nav">
+                    <div class="row">
+                        <div class="col-3">
+                            <img class="icon-pelatihan-nav" src="{{ asset('/assets/home/img/icon/profit.png') }}">
+                        </div>
+                        <p class="isi-pelatihan-nav">Tata Kelola keuangan Bumdes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

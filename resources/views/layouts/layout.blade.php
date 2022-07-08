@@ -28,6 +28,7 @@
       }
       
     function pelatihan() {
+        var v = document.getElementById("pendampingan");
         var w = document.getElementById("berita");
         var x = document.getElementById("pelatihan");
         var y = document.getElementById("layanan");
@@ -37,12 +38,14 @@
             y.style.display = "none";
             z.style.display = "none";
             w.style.display = "none";
+            v.style.display = "none";
         } else {
             x.style.display = "none";
         }
     }
 
     function layanan() {
+        var v = document.getElementById("pendampingan");
         var w = document.getElementById("berita");
         var x = document.getElementById("layanan");
         var y = document.getElementById("pelatihan");
@@ -52,12 +55,15 @@
             y.style.display = "none";
             z.style.display = "none";
             w.style.display = "none";
-        } else {
+            v.style.display = "none";
+        }
+         else {
             x.style.display = "none";
         }
     }
 
     function profil() {
+        var v = document.getElementById("pendampingan");
         var w = document.getElementById("berita");
         var x = document.getElementById("profil");
         var y = document.getElementById("layanan");
@@ -67,23 +73,42 @@
             y.style.display = "none";
             z.style.display = "none";
             w.style.display = "none";
+            v.style.display = "none";
         } else {
             x.style.display = "none";
         }
     }
 
     function berita() {
+        var v = document.getElementById("pendampingan");
         var w = document.getElementById("berita");
         var x = document.getElementById("profil");
         var y = document.getElementById("layanan");
         var z = document.getElementById("pelatihan");
         if (w.style.display === "none") {
+            v.style.display = "none";
             w.style.display = "block";
             x.style.display = "none";
             y.style.display = "none";
             z.style.display = "none";
         } else {
             w.style.display = "none";
+        }
+    }
+    function pendampingan() {
+        var v = document.getElementById("pendampingan");
+        var w = document.getElementById("berita");
+        var x = document.getElementById("profil");
+        var y = document.getElementById("layanan");
+        var z = document.getElementById("pelatihan");
+        if (v.style.display === "none") {
+            v.style.display = "block";
+            w.style.display = "none";
+            x.style.display = "none";
+            y.style.display = "none";
+            z.style.display = "none";
+        } else {
+            v.style.display = "none";
         }
     }
       

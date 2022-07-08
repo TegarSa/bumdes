@@ -37,7 +37,7 @@
                         <a class="nav-link dropdown-toggle" onclick="pelatihan()" href="#">Pelatihan</a>
                     </li>
                     <li class="nav-item item-nav">
-                        <a class="nav-link dropdown-toggle" href="#">Pendampingan</a>
+                        <a class="nav-link dropdown-toggle" onclick="pendampingan()" href="#">Pendampingan</a>
                     </li>
                     <li class="nav-item item-nav">
                         <a class="nav-link dropdown-toggle" onclick="layanan()" href="#">Layanan Digital</a>
