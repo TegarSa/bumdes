@@ -75,7 +75,16 @@
                     <div class="d-flex flex-row justify-content-center">
                         <div class="d-flex flex-column justify-content-center" style="height: 600px;">
                             <h1 class="title-daftar-baru" style="margin-bottom: 32px;">Masuk</h1>
-                            <form action="#">
+                            @if (count($errors) > 0)
+                                @foreach ($errors->all() as $error)
+                                    <div class="alert alert-danger alert-dismissible fade show alarm" role="alert">
+                                        <strong>Peringatan !!!</strong> {{ $error }}.
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                @endforeach
+                            @endif
+                            <form action="{{ url('/proses-login') }}" method="POST">
+                                @csrf
                                 <div class="form-group" style="margin-bottom: 16px;">
                                     <label class="label-form">Email*</label>
                                     <input type="email" class="form-control input-form" name="email" placeholder="Masukan email anda">
@@ -115,7 +124,7 @@
                                     <button type="submit" class="btn btn-lanjut">Masuk</button>
                                 </div>
                                 <div class="d-flex flex-row justify-content-center">
-                                    <label class="belum-punya-akun">Belum punya akun?<a href="{{ url('/daftar-1') }}" style="color: #0EA44D; text-decoration:none;"> Buat akun</a></label>
+                                    <label class="belum-punya-akun">Belum punya akun?<a href="{{ url('/daftar') }}" style="color: #0EA44D; text-decoration:none;"> Buat akun</a></label>
                                 </div>
                             </form>
                         </div>

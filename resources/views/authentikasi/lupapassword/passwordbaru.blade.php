@@ -10,9 +10,10 @@
                 <h1 class="title-daftar-baru">Password Baru</h1>
                 <p class="isi-daftar-baru" style="margin-top: 13px;">
                     buat password yang kuat untuk akun dengan e-mail<br> 
-                    <b>Kontenmediasyncore@gmail.com</b>
+                    <b>{{ $email }}</b>
                 </p>
-                <form action="#">
+                <form action="{{ url('/proses-password-baru', $email) }}" method="POST">
+                    @csrf
                     <div class="form-group" style="margin-top: 24px;">
                         <label class="label-form">Password baru*</label>
                         <input type="password" class="form-control input-form" name="password" placeholder="Masukan password baru anda">

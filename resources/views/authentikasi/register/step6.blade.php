@@ -75,7 +75,7 @@
                         </p>
                     </div>
                     <div class="d-flex flex-row justify-content-center">
-                        <a href="#"><button class="btn btn-lanjut">Lanjut</button></a>
+                        <a href="{{ url('/') }}"><button class="btn btn-lanjut">Lanjut</button></a>
                     </div>
                 </div>
             </div>

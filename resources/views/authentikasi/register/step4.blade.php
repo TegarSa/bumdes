@@ -63,7 +63,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="d-flex flex-column justify-content-center">
-                    <a href="#" class="sebelumnya kembali-beranda">Sebelumnya</a>
+                    <a href="{{ url('/profil-satu') }}" class="sebelumnya kembali-beranda">Sebelumnya</a>
                     <div class="d-flex flex-row justify-content-start">
                         <img class="progres" src="{{ asset('/assets/home/img/progres-2.png') }}">
                         <label class="label-progres">2/3</label>
@@ -75,7 +75,16 @@
             <div class="col-md-12">
                 <div class="d-flex flex-column justify-content-start card-step-3">
                     <h1 class="title-step-3">Lengkapi Profil anda</h1>
-                    <form>
+                    @if (count($errors) > 0)
+                        @foreach ($errors->all() as $error)
+                            <div class="alert alert-danger alert-dismissible fade show alarm" role="alert">
+                                <strong>Peringatan !!!</strong> {{ $error }}.
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        @endforeach
+                    @endif
+                    <form action="{{ url('/proses/profildua') }}" method="POST">
+                        @csrf
                         <div class="form-group" style="margin-top: 24px;">
                             <label class="label-form">Nama Intansi/BUM Desa</label>
                             <input type="text" class="form-control input-form" name="nama_bumdes" placeholder="Masukan nama Instansi / BUM Desa">
@@ -86,14 +95,17 @@
                         </div>
                         <div class="form-group" style="margin-top: 16px;">
                             <label class="label-form">Provinsi anda</label>
-                            <select class="form-control input-form" name="provinsi">
-                                <option selected>Provinsi anda</option>
+                            <select class="form-control input-form" name="provinsi" id="province">
+                                <option selected>Provinsi Anda</option>
+                                @foreach ($provinces as $province)
+                                <option value="{{ $province->id ?? '' }}">{{ $province->name ?? '' }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group" style="margin-top: 16px;">
                             <label class="label-form">Kota anda</label>
-                            <select class="form-control input-form" name="kota">
-                                <option selected>Kota anda</option>
+                            <select class="form-control input-form" name="kota" id="kota">
+                                <option hidden>Pilih Kota</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -107,5 +119,32 @@
 </div>
 @endsection
 @section('js')
-    
+<script>
+    $(document).ready(function() {
+    $('#province').on('change', function() {
+       var layananID = $(this).val();
+       if(layananID) {
+           $.ajax({
+               url: "/cities/"+layananID,
+               type: "GET",
+               dataType: 'JSON',
+               success:function(data)
+               {
+                 if(data){
+                    $('#kota').empty();
+                    $('#kota').append('<option hidden>Pilih Kota</option>'); 
+                    $.each(data,function(nama,kode){
+                        $("#kota").append('<option value="'+kode+'">'+nama+'</option>');
+                    });
+                }else{
+                    $('#course').empty();
+                }
+             }
+           });
+       }else{
+        $('#course').append('<option hidden>Choose Course</option>'); 
+       }
+    });
+    });
+</script>
 @endsection

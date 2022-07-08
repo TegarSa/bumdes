@@ -63,7 +63,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="d-flex flex-column justify-content-center">
-                    <a href="#" class="sebelumnya kembali-beranda">Sebelumnya</a>
+                    <a href="{{ url('/daftar') }}" class="sebelumnya kembali-beranda">Sebelumnya</a>
                     <div class="d-flex flex-row justify-content-start">
                         <img class="progres" src="{{ asset('/assets/home/img/progres-1.png') }}">
                         <label class="label-progres">1/3</label>
@@ -75,19 +75,28 @@
             <div class="col-md-12">
                 <div class="d-flex flex-column justify-content-start card-step-3">
                     <h1 class="title-step-3">Lengkapi Profil anda</h1>
-                    <form>
+                    @if (count($errors) > 0)
+                        @foreach ($errors->all() as $error)
+                            <div class="alert alert-danger alert-dismissible fade show alarm" role="alert">
+                                <strong>Peringatan !!!</strong> {{ $error }}.
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        @endforeach
+                    @endif
+                    <form action="{{ url('/proses/profilsatu') }}" method="POST">
+                        @csrf
                         <p class="daftar-sebagai">Kamu daftar sebagai</p>
                         <div>
                             <label class="pilihan">
-                                <input class="pilih" type="radio" name="daftar-sebagai" id="pegawai-bumdes">
+                                <input class="pilih" type="radio" name="daftarsebagai" value="Pegawai Bumdes" id="pegawai-bumdes" checked>
                                 <img class="img-pilih" src="{{ asset('/assets/home/img/radio-pegawai-bumdes.png') }}">
                             </label>
                             <label class="pilihan">
-                                <input class="pilih" type="radio" name="daftar-sebagai" id="pegawai-desa">
+                                <input class="pilih" type="radio" name="daftarsebagai" value="Pegawai Desa" id="pegawai-desa">
                                 <img class="img-pilih" src="{{ asset('/assets/home/img/radio-pegawai-desa.png') }}">
                             </label>
                             <label class="pilihan">
-                                <input class="pilih" type="radio" name="daftar-sebagai" id="umum">
+                                <input class="pilih" type="radio" name="daftarsebagai" value="Umum" id="umum">
                                 <img class="img-pilih" src="{{ asset('/assets/home/img/radio-umum.png') }}">
                             </label>
                         </div>
@@ -102,9 +111,9 @@
                         </div>
                         <label class="label-form" style="margin-top: 16px;">Jenis Kelamin*</label>
                         <div>
-                            <input type="radio" name="jekel" id="pria">
+                            <input type="radio" name="jekel" value="Pria" id="pria">
                             <label for="pria">Pria</label>
-                            <input type="radio" name="jekel" id="wanita" style="margin-left: 69px;">
+                            <input type="radio" name="jekel" value="Wanita" id="wanita" style="margin-left: 69px;">
                             <label for="wanita">Wanita</label>
                         </div>
                         <div class="form-group">

@@ -16,7 +16,8 @@
             <div class="card">
                 <div class="card-body">
                     <h1 class="title-login-admin">Login Admin Bumdes.id</h1>
-                    <form>
+                    <form action="{{ url('/proses-login') }}" method="POST">
+                        @csrf
                         <div class="form-group" style="margin-bottom: 16px;">
                             <label class="label-form">Email*</label>
                             <input type="email" class="form-control input-form" name="email" placeholder="Masukan email anda">

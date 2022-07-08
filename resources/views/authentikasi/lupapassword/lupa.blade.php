@@ -20,7 +20,8 @@
                 <p class="isi-daftar-baru">
                     Masukkan e-mail  yang terdaftar. kami akan mengirimkan<br> link reset password untuk atur ulang kata sandi
                 </p>
-                <form action="#">
+                <form action="{{ url('/proses-lupapassword') }}" method="POST">
+                    @csrf
                     <div class="form-group">
                         <label class="label-form">Email*</label>
                         <input type="email" class="form-control input-form" name="email" placeholder="Masukan email anda">

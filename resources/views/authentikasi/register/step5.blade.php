@@ -63,7 +63,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="d-flex flex-column justify-content-center">
-                    <a href="#" class="sebelumnya kembali-beranda">Sebelumnya</a>
+                    <a href="{{ url('/profil-dua') }}" class="sebelumnya kembali-beranda">Sebelumnya</a>
                     <div class="d-flex flex-row justify-content-start">
                         <img class="progres" src="{{ asset('/assets/home/img/progres-3.png') }}">
                         <label class="label-progres">3/3</label>
@@ -75,13 +75,22 @@
             <div class="col-md-12">
                 <div class="d-flex flex-column justify-content-start card-step-3">
                     <h1 class="title-step-3">Lengkapi Profil anda</h1>
-                    <form>
+                    @if (count($errors) > 0)
+                        @foreach ($errors->all() as $error)
+                            <div class="alert alert-danger alert-dismissible fade show alarm" role="alert">
+                                <strong>Peringatan !!!</strong> {{ $error }}.
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        @endforeach
+                    @endif
+                    <form action="{{ url('/proses/profiltiga') }}" method="POST" class="konfirmasi">
+                        @csrf
                         <div class="form-group" style="margin-top: 24px;">
                             <label class="label-form">Email*</label>
                             <div class="row email-terpakai">
                                 <div class="col-12">
                                     <div class="d-flex flex-row justify-content-start">
-                                        <p class="email-nya">kontenmediasyncore@gmail.com</p>
+                                        <p class="email-nya">{{ Session::get('email') }}</p>
                                         <img class="img-check" src="{{ asset('/assets/home/img/check.png') }}">
                                     </div>
                                 </div>
@@ -142,8 +151,8 @@
             text: 'Apakah data yang anda masukan sudah benar',
             confirmButtonColor: '#0EA44D',
             buttons: {
-                confirm : {text:'Ubah',className:'sweet-warning'},
-                cancel : 'Batalkan'
+                confirm : {text:'Konfirmasi',className:'sweet-warning'},
+                cancel : 'Ubah'
             },
         }).then(function (result) {
             if (result) {

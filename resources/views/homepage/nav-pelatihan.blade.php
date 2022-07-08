@@ -235,40 +235,39 @@
         </div>
         <div class="d-flex flex-row justify-content-center">
             <div class="row card-pelatihan-nav">
-                
-                    <div class="col-md-3 pelatihan-nav">
-                        <div class="row">
-                            <div class="col-3">
-                                <img class="icon-pelatihan-nav" src="{{ asset('/assets/home/img/icon/newspaper.png') }}">
-                            </div>
-                            <div class="col-9 d-flex flex-column">
-                                <p class="judul-layanan-nav">Artikel</p>
-                                <p class="isi-layanan-nav">Cari tahu informasi lengkap mengnai perusahaan kami</p>
-                            </div>
+                <div class="col-md-3 pelatihan-nav">
+                    <div class="row">
+                        <div class="col-3">
+                            <img class="icon-pelatihan-nav" src="{{ asset('/assets/home/img/icon/newspaper.png') }}">
+                        </div>
+                        <div class="col-9 d-flex flex-column">
+                            <p class="judul-layanan-nav">Artikel</p>
+                            <p class="isi-layanan-nav">Cari tahu informasi lengkap mengnai perusahaan kami</p>
                         </div>
                     </div>
-                    <div class="col-md-3 pelatihan-nav">
-                        <div class="row">
-                            <div class="col-3">
-                                <img class="icon-pelatihan-nav" src="{{ asset('/assets/home/img/icon/paper-info.png') }}">
-                            </div>
-                            <div class="col-9 d-flex flex-column">
-                                <p class="judul-layanan-nav">Info Terkini</p>
-                                <p class="isi-layanan-nav">Layanan Konsultasi Online via Zoom setiap Jum’at</p>
-                            </div>
+                </div>
+                <div class="col-md-3 pelatihan-nav">
+                    <div class="row">
+                        <div class="col-3">
+                            <img class="icon-pelatihan-nav" src="{{ asset('/assets/home/img/icon/paper-info.png') }}">
+                        </div>
+                        <div class="col-9 d-flex flex-column">
+                            <p class="judul-layanan-nav">Info Terkini</p>
+                            <p class="isi-layanan-nav">Layanan Konsultasi Online via Zoom setiap Jum’at</p>
                         </div>
                     </div>
-                    <div class="col-md-3 pelatihan-nav">
-                        <div class="row">
-                            <div class="col-3">
-                                <img class="icon-pelatihan-nav" src="{{ asset('/assets/home/img/icon/walet.png') }}">
-                            </div>
-                            <div class="col-9 d-flex flex-column">
-                                <p class="judul-layanan-nav">Newsletter</p>
-                                <p class="isi-layanan-nav">Akses unduh dokumen resmi yang diriilis Bumdes.id </p>
-                            </div>
+                </div>
+                <div class="col-md-3 pelatihan-nav">
+                    <div class="row">
+                        <div class="col-3">
+                            <img class="icon-pelatihan-nav" src="{{ asset('/assets/home/img/icon/walet.png') }}">
+                        </div>
+                        <div class="col-9 d-flex flex-column">
+                            <p class="judul-layanan-nav">Newsletter</p>
+                            <p class="isi-layanan-nav">Akses unduh dokumen resmi yang diriilis Bumdes.id </p>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
     </div>

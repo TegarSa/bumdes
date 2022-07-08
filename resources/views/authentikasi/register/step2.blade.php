@@ -76,25 +76,29 @@
                         <div class="d-flex flex-column justify-content-center card-form-register">
                             <h1 class="title-daftar-baru">Verfikasi akun dulu!</h1>
                             <p class="isi-daftar-baru">
-                                Kode OTP udah dikirim ke <b>kontenmediasyncore@gmail.com</b>.<br> cek kotak masuk sekarang yuk!.
+                                Kode OTP udah dikirim ke <b>{{ $email }}</b>.<br> cek kotak masuk sekarang yuk!.
                             </p>
-                            <form action="/" class="text-center">
+                            <form action="{{ url('/proses/verifikasi') }}" method="POST" class="text-center">
+                                @csrf
                                 <label class="label-otp">Masukan Kode OTP</label>
                                 <div class="d-flex flex-row justify-content-center">
                                     <div class="row card-otp">
                                         <div class="col-3">
-                                            <input type="number" id="otp" class="input-otp" required>
+                                            <input type="number" name="otp1" id="otp" class="input-otp" required>
                                         </div>
                                         <div class="col-3">
-                                            <input type="number" id="otp2" class="input-otp" required>
+                                            <input type="number" name="otp2" id="otp2" class="input-otp" required>
                                         </div>
                                         <div class="col-3">
-                                            <input type="number" id="otp3" class="input-otp" required>
+                                            <input type="number" name="otp3" id="otp3" class="input-otp" required>
                                         </div>
                                         <div class="col-3">
-                                            <input type="number" id="otp4" class="input-otp" required>
+                                            <input type="number" name="otp4" id="otp4" class="input-otp" required>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-lanjut">Lanjut</button>
                                 </div>
                                 <a href="#"><label class="ulang-otp">Kirim ulang OTP</label></a>
                             </form>

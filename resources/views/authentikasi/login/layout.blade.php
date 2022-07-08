@@ -12,6 +12,7 @@
   @yield('css')
 </head>
 <body>
+    @include('sweetalert::alert')
     <div class="container-fluid" style="font-family: 'Poppins', sans-serif;">
         @yield('content')
     </div>

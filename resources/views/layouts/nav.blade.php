@@ -51,7 +51,7 @@
                 </ul>
                 <div class="d-flex button-nav">
                     <a href="{{ url('/login') }}"><button class="btn button-masuk">Masuk</button></a>
-                    <a href="{{ url('daftar-1') }}"><button class="btn button-daftar">Daftar</button></a>
+                    <a href="{{ url('daftar') }}"><button class="btn button-daftar">Daftar</button></a>
                 </div>
             </div>
         </div>

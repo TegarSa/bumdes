@@ -432,6 +432,9 @@ input[type=number] {
     color: white;
     margin-top: -15px;
 }
+.alarm {
+    width: 456px;
+}
 @media screen and (max-width: 1320px) {
     .nav-logo {
         margin-left: 0px;

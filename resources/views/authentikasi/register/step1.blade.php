@@ -78,7 +78,8 @@
                             <p class="isi-daftar-baru">
                                 Gabung dan berkolaborasi bersama untuk kebangkitan<br> ekonomi Indonesia dari Desa di Bumdes.id
                             </p>
-                            <form action="{{ url('/daftar-2') }}">
+                            <form action="{{ url('/daftar/store') }}" method="POST">
+                                @csrf
                                 <div class="form-group">
                                     <label class="label-form">Email*</label>
                                     <input type="email" class="form-control input-form" name="email" placeholder="Masukan email anda">

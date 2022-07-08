@@ -41,7 +41,7 @@
       },
   }).then(function (result) {
       if (result) {
-          window.location.href = '/login-admin';
+          window.location.href = '/logout';
       }
   });
 });

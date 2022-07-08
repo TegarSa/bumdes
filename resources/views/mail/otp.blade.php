@@ -1,0 +1,1 @@
+<p>Ini kode otp mu {{ $otp }}</p>
