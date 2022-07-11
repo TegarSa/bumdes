@@ -435,6 +435,13 @@ input[type=number] {
 .alarm {
     width: 456px;
 }
+.nav-card {
+    background-color: #0EA44D;
+}
+.nav-card:hover {
+    background-color: #1C8E4C;
+    border-radius: 8px;
+}
 @media screen and (max-width: 1320px) {
     .nav-logo {
         margin-left: 0px;

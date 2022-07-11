@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -13,7 +14,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.dashboard.index');
+        $count_user = User::join('profil','users.id','=','profil.user_id')->whereNotIn('hak_akses',['0'])->count();
+        return view('admin.dashboard.index',['count_user'=>$count_user]);
     }
 
     /**

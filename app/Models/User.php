@@ -16,6 +16,7 @@ class User extends Authenticatable
      *
      * @var array
      */
+    protected $table = 'users';
     protected $fillable = [
         'name', 'email', 'email_verified_at', 'password', 'hak_akses'
     ];
@@ -37,4 +38,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function profil() { 
+        return $this->hasOne(Profil::class, 'user_id'); 
+    }
 }

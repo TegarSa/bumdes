@@ -46,7 +46,23 @@
                             </tr>
                             </thead>
                             <tbody>
-                            
+                            @foreach ($users as $user)
+                            <tr>
+                              <td>{{$loop->index +1 }}</td>
+                              <td>{{ $user->name }}</td>
+                              <td>{{ $user->profil->nama_instansi}}</td>
+                              <td>{{ $user->profil->jabatan }}</td>
+                              <td>{{ $user->email }}</td>
+                              <td>0{{ $user->profil->no_telp }}</td>
+                              <td>
+                                <div class="row">
+                                  <div class="col-3">
+                                    <button class="btn btn-kolom-lihat" id="lihat_akun" data-toggle="modal" data-target='#lihat_modal' data-id="{{ $user->id }}"><i class="fas fa-eye"></i></button>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            @endforeach
                         </table>
                     </div>
                 </div>
@@ -55,6 +71,79 @@
       </div>
     </section>
 </div>
+<div class="modal fade" id="lihat_modal">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Detail User</h5>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="label-form">Nama Lengkap</label>
+          <input type="text" value="" class="form-control input-form" id="name" name="email" disabled>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label class="label-form">Nama Instansi</label>
+              <input type="text" value="" class="form-control input-form" id="instansi" name="email" disabled>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <label class="label-form">Jabatan</label>
+              <input type="text" value="" class="form-control input-form" id="jabatan" name="email" disabled>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label class="label-form">Tanggal Lahir</label>
+              <input type="text" value="" class="form-control input-form" id="instansi" name="email" disabled>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <label class="label-form">Jabatan</label>
+              <input type="text" value="" class="form-control input-form" id="jabatan" name="email" disabled>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label class="label-form">Provinsi</label>
+              <input type="text" value="" class="form-control input-form" id="provinsi" name="email" disabled>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <label class="label-form">Kabupaten / Kota</label>
+              <input type="text" value="" class="form-control input-form" id="kota" name="email" disabled>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+{{-- <div class="modal fade" id="lihat_modal">
+  <div class="modal-dialog">
+     <form id="companydata">
+          <div class="modal-content">
+          <input type="hidden" id="color_id" name="color_id" value="">
+          <div class="modal-body">
+              <input type="text" name="name" id="name" value="" class="form-control">
+          </div>
+          <input type="submit" value="Submit" id="submit" class="btn btn-sm btn-outline-danger py-0" style="font-size: 0.8em;">
+      </div>
+     </form>
+  </div>
+</div> --}}
 @endsection
 @section('js')
 <script src="{{ asset('/assets/admin/plugins/datatables/jquery.dataTables.min.js') }}"></script>
@@ -78,4 +167,30 @@
       }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     });
   </script>
+<script>
+
+  $(document).ready(function () {
+  
+  $.ajaxSetup({
+      headers: {
+              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          }
+  });
+  
+  $('body').on('click', '#lihat_akun', function (event) {
+      event.preventDefault();
+      var id = $(this).data('id');
+      console.log(id)
+      $.get('/akun-terdaftar/' + id + '/lihat', function (data) {
+           $('#id').val(data.data.id);
+           $('#name').val(data.data.name);
+           $('#instansi').val(data.data.nama_instansi);
+           $('#jabatan').val(data.data.jabatan);
+           $('#provinsi').val(data.data.provinsi);
+           $('#kota').val(data.data.kota);
+       })
+  });
+  
+  }); 
+</script>
 @endsection

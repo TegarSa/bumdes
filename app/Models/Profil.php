@@ -21,4 +21,9 @@ class Profil extends Model
         'city_id',
         'no_telp'
     ];
+
+    public function user()
+    {
+    	return $this->belongsTo(User::class);
+    }
 }

@@ -45,3 +45,10 @@
     background-color: #000 !important;
     border-color: #000 !important; 
 }
+.btn-kolom-lihat {
+    background-color: #0EA44D;
+    color: white;
+}
+.btn-kolom-lihat:hover {
+    color: white;
+}

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AkunTerdaftarController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
@@ -46,6 +47,8 @@ Route::get('/login-admin',[AuthController::class, 'login_admin'])->name('login_a
 Route::group(['middleware' => ['auth']], function () {
     Route::group(['middleware' => ['login_check:0']], function () {
         Route::resource('admin', AdminController::class);
+        Route::get('/akun-terdaftar', [AkunTerdaftarController::class, 'index']);
+        Route::get('/akun-terdaftar/{id}/lihat', [AkunTerdaftarController::class, 'lihat'])->name('color.update');
     });
     // Route::group(['middleware' => ['login_check:1']], function () {
     //     Route::resource('admin', AdminController::class);
