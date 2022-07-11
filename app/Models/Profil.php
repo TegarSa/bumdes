@@ -22,8 +22,13 @@ class Profil extends Model
         'no_telp'
     ];
 
+
     public function user()
     {
     	return $this->belongsTo(User::class);
+    }
+    public function provinsi()
+    {
+    	return $this->belongsTo(Province::class);
     }
 }

@@ -52,3 +52,7 @@
 .btn-kolom-lihat:hover {
     color: white;
 }
+.btn-print {
+    background-color: #1C8E4C;
+    color: white;
+}

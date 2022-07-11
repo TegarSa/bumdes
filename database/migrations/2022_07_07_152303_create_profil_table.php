@@ -20,8 +20,8 @@ class CreateProfilTable extends Migration
             $table->string('jekel');
             $table->string('nama_instansi');
             $table->string('jabatan');
-            $table->foreignId('province_id')->constrained('indonesia_provinces');
-            $table->foreignId('city_id')->constrained('indonesia_cities');
+            $table->foreignId('province_id')->constrained('provinces');
+            $table->foreignId('city_id')->constrained('regencies');
             $table->string('no_telp');
             $table->timestamps();
         });

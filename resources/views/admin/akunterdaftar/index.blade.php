@@ -30,6 +30,7 @@
                     <div class="card-header bg-card-primer">
                         <h3 class="card-title">Data Akun Terdaftar</h3>
                         <div class="card-tools">
+                          <a href="{{ url('/akun-terdaftar/export') }}" class="btn btn-print"><i class="fas fa-print"></i> Print Excel</a>
                         </div>
                     </div>
                     <div class="card-body">
@@ -42,6 +43,8 @@
                               <th>Jabatan</th>
                               <th>E-Mail</th>
                               <th>No Hp / Telp</th>
+                              <th>Daftar Sebagai</th>
+                              <th>Provinsi</th>
                               <th>Aksi</th>
                             </tr>
                             </thead>
@@ -54,6 +57,14 @@
                               <td>{{ $user->profil->jabatan }}</td>
                               <td>{{ $user->email }}</td>
                               <td>0{{ $user->profil->no_telp }}</td>
+                              @if ($user->hak_akses == 1)
+                              <td>Pegawai Bumdes</td>
+                              @elseif($user->hak_akses == 2)
+                              <td>Pegawai Desa</td>
+                              @elseif($user->hak_akses == 3)
+                              <td>Umum</td>
+                              @endif
+                              <td>{{ $user->profil->provinsi->name }}</td>
                               <td>
                                 <div class="row">
                                   <div class="col-3">
@@ -78,9 +89,19 @@
         <h5 class="modal-title">Detail User</h5>
       </div>
       <div class="modal-body">
-        <div class="form-group">
-          <label class="label-form">Nama Lengkap</label>
-          <input type="text" value="" class="form-control input-form" id="name" name="email" disabled>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label class="label-form">Nama Lengkap</label>
+              <input type="text" value="" class="form-control input-form" id="name" name="email" disabled>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <label class="label-form">Daftar Sebagai</label>
+              <input type="text" value="" class="form-control input-form" id="sebagai" name="email" disabled>
+            </div>
+          </div>
         </div>
         <div class="row">
           <div class="col-6">
@@ -100,13 +121,13 @@
           <div class="col-6">
             <div class="form-group">
               <label class="label-form">Tanggal Lahir</label>
-              <input type="text" value="" class="form-control input-form" id="instansi" name="email" disabled>
+              <input type="text" value="" class="form-control input-form" id="tgl_lahir" name="email" disabled>
             </div>
           </div>
           <div class="col-6">
             <div class="form-group">
-              <label class="label-form">Jabatan</label>
-              <input type="text" value="" class="form-control input-form" id="jabatan" name="email" disabled>
+              <label class="label-form">Jenis Kelamin</label>
+              <input type="text" value="" class="form-control input-form" id="jekel" name="email" disabled>
             </div>
           </div>
         </div>
@@ -121,6 +142,20 @@
             <div class="form-group">
               <label class="label-form">Kabupaten / Kota</label>
               <input type="text" value="" class="form-control input-form" id="kota" name="email" disabled>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label class="label-form">E-mail</label>
+              <input type="text" value="" class="form-control input-form" id="email" name="email" disabled>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <label class="label-form">No Telp / Hp</label>
+              <input type="text" value="" class="form-control input-form" id="no_telp" name="email" disabled>
             </div>
           </div>
         </div>
@@ -188,6 +223,17 @@
            $('#jabatan').val(data.data.jabatan);
            $('#provinsi').val(data.data.provinsi);
            $('#kota').val(data.data.kota);
+           $('#tgl_lahir').val(data.data.tgl_lahir);
+           $('#jekel').val(data.data.jekel);
+           $('#email').val(data.data.email);
+           $('#no_telp').val('0'+data.data.no_telp);
+           if(data.data.hak_akses == 1){
+            $('#sebagai').val('Pegawai Bumdes');
+           } else if (data.data.hak_akses == 2){
+            $('#sebagai').val('Pegawai Desa');
+           } else if (data.data.hak_akses == 3){
+            $('#sebagai').val('Umum');
+           }
        })
   });
   

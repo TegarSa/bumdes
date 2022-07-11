@@ -63,7 +63,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="d-flex flex-column justify-content-center align-items-start">
-                    <a class="kembali-beranda" href="{{ url('/daftar-1') }}">
+                    <a class="kembali-beranda" href="{{ url('/daftar') }}">
                         <i class="fa-solid fa-arrow-left-long"></i> Kembali
                     </a>
                 </div>

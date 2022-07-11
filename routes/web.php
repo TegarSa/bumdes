@@ -49,6 +49,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('admin', AdminController::class);
         Route::get('/akun-terdaftar', [AkunTerdaftarController::class, 'index']);
         Route::get('/akun-terdaftar/{id}/lihat', [AkunTerdaftarController::class, 'lihat'])->name('color.update');
+        Route::get('/akun-terdaftar/export', [AkunTerdaftarController::class, 'export']);
     });
     // Route::group(['middleware' => ['login_check:1']], function () {
     //     Route::resource('admin', AdminController::class);
